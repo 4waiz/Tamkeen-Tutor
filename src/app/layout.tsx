@@ -17,7 +17,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SkillCompass UAE — Find your skill gaps, get a 7-day plan",
+  title: "SkillCompass UAE - Find your skill gaps, get a 7-day plan",
   description:
     "AI-powered skills-gap analyzer and adaptive tutor for UAE youth. Diagnose your level, get a personalized 7-day plan, and improve with guided practice.",
 };

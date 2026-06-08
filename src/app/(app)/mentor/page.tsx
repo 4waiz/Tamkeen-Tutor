@@ -41,7 +41,7 @@ export default async function MentorPage() {
         <Card>
           <Stat
             label="Average readiness"
-            value={data.averageReadiness != null ? `${data.averageReadiness}%` : "—"}
+            value={data.averageReadiness != null ? `${data.averageReadiness}%` : "-"}
             tone={
               data.averageReadiness == null
                 ? "ink"
@@ -83,9 +83,9 @@ export default async function MentorPage() {
                 {data.learners.map((l) => (
                   <tr key={l.id} className="border-b border-border/30">
                     <td className="py-2 pr-3 font-semibold">{l.name}</td>
-                    <td className="py-2 pr-3 text-ink-soft">{l.goal ?? "—"}</td>
+                    <td className="py-2 pr-3 text-ink-soft">{l.goal ?? "-"}</td>
                     <td className="py-2 pr-3 font-mono font-bold">
-                      {l.readiness != null ? `${l.readiness}%` : "—"}
+                      {l.readiness != null ? `${l.readiness}%` : "-"}
                     </td>
                     <td className="py-2 pr-3 font-mono">{l.lessonsCompleted}</td>
                     <td className="py-2">

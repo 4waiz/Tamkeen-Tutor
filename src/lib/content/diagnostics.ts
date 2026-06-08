@@ -1,7 +1,7 @@
 import type { DiagnosticQuestion, Goal } from "@/lib/types";
 
 /**
- * Seed diagnostic question banks — 8 questions per goal, each mapped to a
+ * Seed diagnostic question banks - 8 questions per goal, each mapped to a
  * skill category. These power the assessment with zero external services.
  * `correct_index` is used by the scorer; it is never sent to the client.
  */
@@ -203,7 +203,7 @@ const BANK: Record<Goal, DiagnosticQuestion[]> = {
         { index: 3, label: "Ignore it" },
       ],
       correct_index: 1,
-      explanation: "Error messages usually name the file and line — read them first.",
+      explanation: "Error messages usually name the file and line - read them first.",
     },
     {
       id: "code-8",
@@ -323,7 +323,7 @@ const BANK: Record<Goal, DiagnosticQuestion[]> = {
         { index: 3, label: "Done the homework is." },
       ],
       correct_index: 1,
-      explanation: "'I finished my homework' is direct and clear — fewer words, same meaning.",
+      explanation: "'I finished my homework' is direct and clear - fewer words, same meaning.",
     },
   ],
 

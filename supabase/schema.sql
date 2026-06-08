@@ -1,5 +1,5 @@
 -- ════════════════════════════════════════════════════════════════════
--- SkillCompass UAE — Supabase schema
+-- SkillCompass UAE - Supabase schema
 -- Run this in the Supabase SQL Editor (Dashboard → SQL → New query).
 -- Safe to re-run: uses IF NOT EXISTS / DROP POLICY IF EXISTS guards.
 -- ════════════════════════════════════════════════════════════════════
@@ -17,7 +17,7 @@ end;
 $$;
 
 -- ════════════════════════════════════════════════════════════════════
--- profiles — one row per learner, linked to auth.users
+-- profiles - one row per learner, linked to auth.users
 -- ════════════════════════════════════════════════════════════════════
 create table if not exists public.profiles (
   id                       uuid primary key references auth.users(id) on delete cascade,
@@ -47,7 +47,7 @@ create trigger trg_profiles_updated_at
   for each row execute function public.set_updated_at();
 
 -- ════════════════════════════════════════════════════════════════════
--- assessments — one diagnostic attempt
+-- assessments - one diagnostic attempt
 -- ════════════════════════════════════════════════════════════════════
 create table if not exists public.assessments (
   id              uuid primary key default gen_random_uuid(),
@@ -60,7 +60,7 @@ create table if not exists public.assessments (
 create index if not exists idx_assessments_user on public.assessments(user_id);
 
 -- ════════════════════════════════════════════════════════════════════
--- assessment_answers — one row per answered question
+-- assessment_answers - one row per answered question
 -- ════════════════════════════════════════════════════════════════════
 create table if not exists public.assessment_answers (
   id             uuid primary key default gen_random_uuid(),
@@ -76,7 +76,7 @@ create index if not exists idx_answers_assessment on public.assessment_answers(a
 create index if not exists idx_answers_user on public.assessment_answers(user_id);
 
 -- ════════════════════════════════════════════════════════════════════
--- skill_scores — per-skill percentage for an assessment
+-- skill_scores - per-skill percentage for an assessment
 -- ════════════════════════════════════════════════════════════════════
 create table if not exists public.skill_scores (
   id            uuid primary key default gen_random_uuid(),
@@ -90,7 +90,7 @@ create index if not exists idx_skill_scores_user on public.skill_scores(user_id)
 create index if not exists idx_skill_scores_assessment on public.skill_scores(assessment_id);
 
 -- ════════════════════════════════════════════════════════════════════
--- learning_paths — one generated 7-day plan
+-- learning_paths - one generated 7-day plan
 -- ════════════════════════════════════════════════════════════════════
 create table if not exists public.learning_paths (
   id            uuid primary key default gen_random_uuid(),
@@ -104,7 +104,7 @@ create table if not exists public.learning_paths (
 create index if not exists idx_paths_user on public.learning_paths(user_id);
 
 -- ════════════════════════════════════════════════════════════════════
--- learning_path_items — the daily lessons within a path
+-- learning_path_items - the daily lessons within a path
 -- ════════════════════════════════════════════════════════════════════
 create table if not exists public.learning_path_items (
   id               uuid primary key default gen_random_uuid(),
@@ -125,7 +125,7 @@ create index if not exists idx_path_items_path on public.learning_path_items(lea
 create index if not exists idx_path_items_user on public.learning_path_items(user_id);
 
 -- ════════════════════════════════════════════════════════════════════
--- tutor_messages — chat history with the AI tutor, scoped to a lesson
+-- tutor_messages - chat history with the AI tutor, scoped to a lesson
 -- ════════════════════════════════════════════════════════════════════
 create table if not exists public.tutor_messages (
   id         uuid primary key default gen_random_uuid(),
@@ -139,7 +139,7 @@ create index if not exists idx_tutor_user on public.tutor_messages(user_id);
 create index if not exists idx_tutor_lesson on public.tutor_messages(user_id, lesson_id);
 
 -- ════════════════════════════════════════════════════════════════════
--- lesson_submissions — learner practice work + feedback
+-- lesson_submissions - learner practice work + feedback
 -- ════════════════════════════════════════════════════════════════════
 create table if not exists public.lesson_submissions (
   id         uuid primary key default gen_random_uuid(),
@@ -154,7 +154,7 @@ create table if not exists public.lesson_submissions (
 create index if not exists idx_submissions_user on public.lesson_submissions(user_id);
 
 -- ════════════════════════════════════════════════════════════════════
--- lesson_completions — one row when a learner marks a lesson done
+-- lesson_completions - one row when a learner marks a lesson done
 -- ════════════════════════════════════════════════════════════════════
 create table if not exists public.lesson_completions (
   id         uuid primary key default gen_random_uuid(),
@@ -166,7 +166,7 @@ create table if not exists public.lesson_completions (
 create index if not exists idx_completions_user on public.lesson_completions(user_id);
 
 -- ════════════════════════════════════════════════════════════════════
--- Row Level Security — every table is user-owned
+-- Row Level Security - every table is user-owned
 -- ════════════════════════════════════════════════════════════════════
 alter table public.profiles            enable row level security;
 alter table public.assessments         enable row level security;
@@ -235,6 +235,6 @@ create trigger on_auth_user_created
 -- The mentor view aggregates across ALL learners. With RLS above, a
 -- normal session only sees its own rows. To power the mentor view across
 -- learners, the app uses the SUPABASE_SERVICE_ROLE_KEY on the server
--- (which bypasses RLS) — never exposed to the browser. If that key is
+-- (which bypasses RLS) - never exposed to the browser. If that key is
 -- absent, the mentor view degrades to showing the signed-in user only.
 -- A future role-based version can add policies keyed on profiles.role.

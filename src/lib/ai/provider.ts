@@ -1,5 +1,5 @@
 // Server-only, OpenAI-compatible Chat Completions wrapper.
-// Never import this from a Client Component — it reads secret env vars.
+// Never import this from a Client Component - it reads secret env vars.
 
 import "server-only";
 
@@ -26,7 +26,7 @@ function apiKey(): string | undefined {
 /**
  * Calls the configured chat model. Returns the assistant message string,
  * or null on any failure (missing key, network error, bad status, timeout).
- * Callers MUST treat null as "use fallback" — this function never throws.
+ * Callers MUST treat null as "use fallback" - this function never throws.
  */
 export async function chat(
   messages: ChatMessage[],

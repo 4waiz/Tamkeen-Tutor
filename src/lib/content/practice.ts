@@ -40,7 +40,7 @@ export function evaluatePracticeFallback(
 
   const improvements: string[] = [];
   if (wordCount < 30)
-    improvements.push("add more detail — aim for at least a few full sentences");
+    improvements.push("add more detail - aim for at least a few full sentences");
   if (hits < Math.max(1, Math.ceil(keywords.length / 2)))
     improvements.push(
       `tie your answer more closely to the success criteria: "${lesson.success_criteria}"`,
@@ -54,9 +54,9 @@ export function evaluatePracticeFallback(
     `Strength: ${capitalise(strength)}.`,
     `To improve: ${improvement}.`,
     met_criteria
-      ? "Next step: you've met the criteria — mark the lesson complete and move on."
+      ? "Next step: you've met the criteria - mark the lesson complete and move on."
       : "Next step: revise using the tip above, then submit again.",
-    "(Rubric mode — add an AI key for tailored feedback.)",
+    "(Rubric mode - add an AI key for tailored feedback.)",
   ].join(" ");
 
   return { score, feedback, met_criteria, source: "fallback" };

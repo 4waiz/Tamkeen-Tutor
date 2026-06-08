@@ -57,7 +57,7 @@ export function TutorChat({
     ? [
         "Explain this lesson in simple terms.",
         "Give me an example for my situation.",
-        "I'm stuck on the practice task — help?",
+        "I'm stuck on the practice task - help?",
       ]
     : [
         "What should I focus on first?",

@@ -9,7 +9,7 @@ const STATUS_COLOR: Record<"success" | "warning" | "danger", string> = {
   danger: "#DC2626",
 };
 
-/** Big readiness donut — pure SVG, no external chart lib. */
+/** Big readiness donut - pure SVG, no external chart lib. */
 export function ScoreDonut({
   value,
   size = 160,
@@ -112,7 +112,7 @@ export function SkillScoreList({
           <li key={s.skill_name}>
             <Progress
               value={s.score}
-              label={`${s.skill_name}${isWeak ? " — focus area" : ""}`}
+              label={`${s.skill_name}${isWeak ? " - focus area" : ""}`}
             />
           </li>
         );
@@ -164,14 +164,14 @@ export function ProgressChart({
           </g>
         );
       })}
-      <path d={path} fill="none" stroke="#0B2E4F" strokeWidth={4} strokeLinejoin="round" />
+      <path d={path} fill="none" stroke="#3F434A" strokeWidth={4} strokeLinejoin="round" />
       {xs.map((x, i) => (
         <circle
           key={i}
           cx={x}
           cy={ys[i]}
           r={5}
-          fill="#16D67A"
+          fill="#F36F21"
           stroke="#1C293C"
           strokeWidth={3}
         />

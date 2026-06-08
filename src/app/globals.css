@@ -23,7 +23,7 @@
 
   /* A single, consistent, highly visible focus ring across the app. */
   :focus-visible {
-    outline: 3px solid #0B2E4F;
+    outline: 3px solid #3F434A;
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -38,7 +38,7 @@
 }
 
 @layer components {
-  /* Mono section tag — small uppercase label used above headings. */
+  /* Mono section tag - small uppercase label used above headings. */
   .neo-tag {
     @apply inline-block font-mono text-xs font-semibold uppercase tracking-widest;
   }

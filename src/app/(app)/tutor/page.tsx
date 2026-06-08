@@ -64,7 +64,7 @@ export default async function TutorPage({
           <Card className="bg-surface-sunken">
             <Badge tone="warning">Fallback mode</Badge>
             <p className="mt-2 text-sm text-ink-soft">
-              No AI key configured — the tutor gives structured, guided
+              No AI key configured - the tutor gives structured, guided
               fallback replies. Add <code className="font-mono">AI_API_KEY</code>{" "}
               for live answers.
             </p>

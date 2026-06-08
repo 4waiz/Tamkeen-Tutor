@@ -4,7 +4,7 @@ import { createBrowserClient } from "@supabase/ssr";
 
 /**
  * Browser Supabase client for use inside Client Components.
- * Uses the public anon key only — never the service role key.
+ * Uses the public anon key only - never the service role key.
  */
 export function createClient() {
   return createBrowserClient(

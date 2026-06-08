@@ -162,10 +162,10 @@ export function LessonCard({
               />
               <p className="text-sm">{evaluation.feedback}</p>
               {evaluation.met_criteria ? (
-                <SuccessBanner message="You met the success criteria — nice work!" />
+                <SuccessBanner message="You met the success criteria - nice work!" />
               ) : (
                 <p className="text-sm font-semibold text-warning">
-                  Not quite there yet — revise and try again, or mark complete when ready.
+                  Not quite there yet - revise and try again, or mark complete when ready.
                 </p>
               )}
             </div>

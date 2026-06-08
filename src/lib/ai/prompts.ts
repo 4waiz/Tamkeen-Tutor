@@ -41,7 +41,7 @@ export function learningPathSystemPrompt(): string {
     "You are a curriculum designer for UAE youth (ages 13-24).",
     "You build practical, encouraging 7-day learning plans.",
     "All examples must relate to UAE youth life: school, university, careers, family, local context.",
-    "Return ONLY a JSON object — no prose, no markdown fences.",
+    "Return ONLY a JSON object - no prose, no markdown fences.",
   ].join(" ");
 }
 
@@ -59,7 +59,7 @@ export function learningPathUserPrompt(args: {
     `Learner language preference: ${LANGUAGE_LABELS[args.language]}.`,
     `Accessibility need: ${ACCESSIBILITY_LABELS[args.accessibility]}. ${a11yGuidance(args.accessibility)}`,
     `Skill scores: ${all}.`,
-    `Prioritise the weakest skills first: ${weak || "none flagged — reinforce fundamentals"}.`,
+    `Prioritise the weakest skills first: ${weak || "none flagged - reinforce fundamentals"}.`,
     "",
     "Produce exactly 7 daily lessons. Each later day should build on earlier days.",
     'Return JSON shaped exactly as: {"items":[{"day":1,"title":"...","target_skill":"...","explanation":"...","practice_task":"...","success_criteria":"...","estimated_time":"20 min"}, ... 7 items]}.',
@@ -73,7 +73,7 @@ export function tutorSystemPrompt(ctx: TutorContext): string {
     .map((s) => `${s.skill_name}: ${s.score}%`)
     .join("; ");
   const lesson = ctx.lesson
-    ? `Current lesson — "${ctx.lesson.title}" targeting ${ctx.lesson.target_skill}. Practice task: ${ctx.lesson.practice_task}`
+    ? `Current lesson - "${ctx.lesson.title}" targeting ${ctx.lesson.target_skill}. Practice task: ${ctx.lesson.practice_task}`
     : "No specific lesson selected.";
   return [
     "You are SkillCompass, a friendly, sharp AI tutor for UAE youth.",
@@ -96,7 +96,7 @@ export function practiceSystemPrompt(): string {
   return [
     "You are a fair, encouraging assessor for UAE youth learners.",
     "You grade a short practice submission against success criteria.",
-    "Return ONLY a JSON object — no prose, no markdown fences.",
+    "Return ONLY a JSON object - no prose, no markdown fences.",
   ].join(" ");
 }
 

@@ -36,7 +36,7 @@ export function createClient() {
 }
 
 /**
- * Service-role client — bypasses RLS. SERVER ONLY.
+ * Service-role client - bypasses RLS. SERVER ONLY.
  * Returns null if the service role key is not configured, so callers can
  * gracefully degrade (e.g. the mentor dashboard).
  */

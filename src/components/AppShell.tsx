@@ -19,7 +19,7 @@ const NAV = [
 
 /**
  * Authenticated app frame: top bar with brand, primary nav, and sign-out.
- * Responsive — nav collapses to a toggle on small screens. Keyboard
+ * Responsive - nav collapses to a toggle on small screens. Keyboard
  * navigable with visible focus rings (from globals).
  */
 export function AppShell({
@@ -69,7 +69,7 @@ export function AppShell({
 
           <div className="flex items-center gap-2">
             {userName && (
-              <span className="hidden text-sm font-semibold text-ink-soft sm:inline">
+              <span className="hidden items-center rounded-full border-3 border-border bg-surface-sunken px-3 py-1 text-sm font-semibold text-ink sm:inline-flex">
                 {userName}
               </span>
             )}

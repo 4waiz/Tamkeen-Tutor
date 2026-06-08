@@ -37,7 +37,7 @@ export default function HomePage() {
             <p className="mt-4 max-w-xl text-base text-ink-soft">
               SkillCompass UAE diagnoses your current skill level, builds a
               personalized learning path, and teaches you with an AI tutor that
-              knows your goals — built for UAE youth aged 13–24.
+              knows your goals - built for UAE youth aged 13–24.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/sign-up">
@@ -166,7 +166,7 @@ export default function HomePage() {
 
       <footer className="border-t-3 border-border bg-surface-raised">
         <div className="mx-auto max-w-6xl px-4 py-6 text-sm text-ink-soft">
-          SkillCompass UAE — built for the Tamkeen 5.0 “AI for Education &amp;
+          SkillCompass UAE - built for the Tamkeen 5.0 “AI for Education &amp;
           Skills” challenge.
         </div>
       </footer>

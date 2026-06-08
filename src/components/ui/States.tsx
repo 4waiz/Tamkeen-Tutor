@@ -1,7 +1,7 @@
 import { Card } from "./Card";
 import { Button } from "./Button";
 
-/** Empty state — shown when there is no data yet, with a clear next action. */
+/** Empty state - shown when there is no data yet, with a clear next action. */
 export function EmptyState({
   title,
   description,
@@ -28,7 +28,7 @@ export function EmptyState({
   );
 }
 
-/** Loading state — accessible status with a spinner. */
+/** Loading state - accessible status with a spinner. */
 export function LoadingState({ label = "Loading…" }: { label?: string }) {
   return (
     <Card
@@ -42,7 +42,7 @@ export function LoadingState({ label = "Loading…" }: { label?: string }) {
   );
 }
 
-/** Error state — clear message and an optional retry action. */
+/** Error state - clear message and an optional retry action. */
 export function ErrorState({
   title = "Something went wrong",
   description,

@@ -14,7 +14,7 @@ export interface RawAnswer {
  * - Each skill score is the % of its questions answered correctly.
  * - Overall readiness is the mean of the per-skill scores.
  * - Weakest skills are the lowest-scoring two.
- * Pure and deterministic — used by the assessment flow with or without AI.
+ * Pure and deterministic - used by the assessment flow with or without AI.
  */
 export function scoreAssessment(
   questions: DiagnosticQuestion[],

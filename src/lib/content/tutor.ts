@@ -3,7 +3,7 @@ import { GOAL_LABELS, type TutorContext } from "@/lib/types";
 /**
  * Deterministic tutor reply used when AI mode is unavailable.
  * It still personalises using the learner's goal, lesson, and skills, and
- * always ends with one check-for-understanding question — matching the
+ * always ends with one check-for-understanding question - matching the
  * behaviour contract of the AI tutor.
  */
 export function generateFallbackTutorReply(
@@ -23,7 +23,7 @@ export function generateFallbackTutorReply(
       `In plain terms: ${ctx.lesson.explanation}`,
     );
     lines.push(
-      `Try this now — ${ctx.lesson.practice_task} You'll know you've got it when: ${ctx.lesson.success_criteria}`,
+      `Try this now - ${ctx.lesson.practice_task} You'll know you've got it when: ${ctx.lesson.success_criteria}`,
     );
   } else {
     lines.push(

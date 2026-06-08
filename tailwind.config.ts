@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 /**
- * SkillCompass UAE — neobrutalism design tokens.
+ * SkillCompass UAE - neobrutalism design tokens.
  * Source of truth: SKILL.md (typeui.sh neobrutalism).
  * Use semantic token names everywhere; avoid raw hex in components.
  */
@@ -12,11 +12,11 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#16D67A", // EDGE signature green — primary action surface
-          fg: "#0A1F2C", // text on primary
+          DEFAULT: "#F36F21", // EDGE signature orange - primary action surface
+          fg: "#1B1A17", // text on primary
         },
         secondary: {
-          DEFAULT: "#0B2E4F", // EDGE deep navy accent
+          DEFAULT: "#3F434A", // EDGE charcoal grey accent
           fg: "#FBFBF9",
         },
         success: { DEFAULT: "#16A34A", fg: "#FBFBF9" },
@@ -29,7 +29,7 @@ const config: Config = {
         },
         ink: {
           DEFAULT: "#1C293C", // primary text
-          soft: "#3A4A63", // still AA on surface — never lighter than this for body text
+          soft: "#3A4A63", // still AA on surface - never lighter than this for body text
         },
         border: {
           DEFAULT: "#1C293C", // thick dark borders
@@ -58,11 +58,11 @@ const config: Config = {
         "neo-sm": "8px",
       },
       boxShadow: {
-        // Offset hard shadows — the neobrutalism signature
+        // Offset hard shadows - the neobrutalism signature
         neo: "4px 4px 0 0 #1C293C",
         "neo-lg": "6px 6px 0 0 #1C293C",
         "neo-sm": "2px 2px 0 0 #1C293C",
-        "neo-secondary": "4px 4px 0 0 #0B2E4F",
+        "neo-secondary": "4px 4px 0 0 #3F434A",
         "neo-inset": "inset 2px 2px 0 0 #1C293C",
       },
       spacing: {

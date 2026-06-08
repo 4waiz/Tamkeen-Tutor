@@ -83,7 +83,7 @@ export default async function LearningPathPage() {
       <Card accent="primary">
         <Progress
           value={(doneCount / path.items.length) * 100}
-          label={`Progress — ${doneCount} of ${path.items.length} lessons complete`}
+          label={`Progress - ${doneCount} of ${path.items.length} lessons complete`}
           tone="primary"
         />
       </Card>

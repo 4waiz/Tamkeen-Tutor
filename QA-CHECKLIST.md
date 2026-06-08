@@ -1,4 +1,4 @@
-# SkillCompass UAE — QA checklist
+# SkillCompass UAE - QA checklist
 
 Run through these to verify the app is a real, working product.
 Everything below works **with or without** an AI key.
@@ -23,7 +23,7 @@ Everything below works **with or without** an AI key.
 - [ ] The **dashboard updates** based on saved progress (completion count, next lesson, trend).
 
 ## Persistence & auth
-- [ ] **Refreshing the browser does not erase data** — scores, path, completions persist.
+- [ ] **Refreshing the browser does not erase data** - scores, path, completions persist.
 - [ ] Visiting a protected route while signed out **redirects to `/sign-in`** (with `redirect` back).
 - [ ] A signed-in user visiting `/sign-in` or `/sign-up` is **redirected to `/dashboard`**.
 - [ ] **Sign out** works and returns to home.
@@ -35,7 +35,7 @@ Everything below works **with or without** an AI key.
 ## AI & fallback
 - [ ] With **no AI key**: learning path, tutor, and practice all return useful fallback content (badges show “Fallback mode”).
 - [ ] With an **AI key**: routes return AI content; on malformed AI output the app falls back instead of crashing.
-- [ ] **No API keys are exposed to the client** — all AI calls happen in `/api/*` routes; `provider.ts` is `server-only`.
+- [ ] **No API keys are exposed to the client** - all AI calls happen in `/api/*` routes; `provider.ts` is `server-only`.
 
 ## UI / accessibility
 - [ ] UI is **responsive** on mobile and desktop (nav collapses to a menu).

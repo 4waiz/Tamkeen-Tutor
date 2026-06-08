@@ -96,7 +96,7 @@ export default async function DashboardPage() {
                   nextLesson
                     ? `Day ${nextLesson.day}: ${nextLesson.title}`
                     : path
-                      ? "You've finished every lesson — retake the diagnostic to measure your gains!"
+                      ? "You've finished every lesson - retake the diagnostic to measure your gains!"
                       : "Generate your 7-day learning path"
                 }
                 description={
@@ -137,7 +137,7 @@ export default async function DashboardPage() {
             <Card>
               <Stat
                 label="Weakest skill"
-                value={weakest[0]?.skill_name ?? "—"}
+                value={weakest[0]?.skill_name ?? "-"}
                 tone="danger"
               />
             </Card>

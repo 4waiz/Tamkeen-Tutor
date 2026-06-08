@@ -2,7 +2,7 @@
   "name": "skillcompass-uae",
   "version": "1.0.0",
   "private": true,
-  "description": "SkillCompass UAE — AI-powered skills-gap analyzer and adaptive tutor for UAE youth.",
+  "description": "SkillCompass UAE - AI-powered skills-gap analyzer and adaptive tutor for UAE youth.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

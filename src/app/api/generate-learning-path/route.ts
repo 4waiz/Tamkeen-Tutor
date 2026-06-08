@@ -17,7 +17,7 @@ export const dynamic = "force-dynamic";
  * POST /api/generate-learning-path
  * Generates a 7-day plan from the learner's latest assessment, then
  * persists it. Uses AI when a key is configured, otherwise deterministic
- * fallback. Never crashes the client — falls back on any AI failure.
+ * fallback. Never crashes the client - falls back on any AI failure.
  */
 export async function POST(req: Request) {
   const supabase = createClient();

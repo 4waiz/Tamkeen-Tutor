@@ -21,7 +21,7 @@ export default async function AssessmentPage() {
       <h1 className="mt-1 text-2xl">Let&apos;s find your skill gaps</h1>
       <p className="mt-1 text-base text-ink-soft">
         {questions.length} multiple-choice questions across{" "}
-        {SKILLS_BY_GOAL[goal].length} skill areas. There&apos;s no time limit —
+        {SKILLS_BY_GOAL[goal].length} skill areas. There&apos;s no time limit -
         pick the best answer for each.
       </p>
 
