@@ -3,8 +3,54 @@
 @tailwind utilities;
 
 @layer base {
+  /* ── Light theme (default) — values are RGB channels for alpha support ── */
   :root {
     color-scheme: light;
+
+    --color-primary: 243 111 33; /* EDGE orange */
+    --color-primary-fg: 27 26 23;
+    --color-secondary: 63 67 74; /* EDGE charcoal grey */
+    --color-secondary-fg: 251 251 249;
+    --color-success: 22 163 74;
+    --color-success-fg: 251 251 249;
+    --color-warning: 217 119 6;
+    --color-warning-fg: 251 251 249;
+    --color-danger: 220 38 38;
+    --color-danger-fg: 251 251 249;
+
+    --color-surface: 251 251 249; /* warm off-white */
+    --color-surface-raised: 255 255 255;
+    --color-surface-sunken: 242 241 236;
+
+    --color-ink: 28 41 60;
+    --color-ink-soft: 58 74 99;
+    --color-border: 28 41 60;
+    --color-shadow: 28 41 60;
+  }
+
+  /* ── Dark theme ── */
+  .dark {
+    color-scheme: dark;
+
+    --color-primary: 243 111 33; /* orange stays the action colour */
+    --color-primary-fg: 23 23 20;
+    --color-secondary: 154 163 178; /* lighter slate so labels stay readable */
+    --color-secondary-fg: 21 23 28;
+    --color-success: 34 197 94;
+    --color-success-fg: 8 18 12;
+    --color-warning: 245 158 11;
+    --color-warning-fg: 23 18 6;
+    --color-danger: 248 113 113;
+    --color-danger-fg: 26 8 8;
+
+    --color-surface: 21 23 28; /* charcoal */
+    --color-surface-raised: 30 33 39;
+    --color-surface-sunken: 15 17 21;
+
+    --color-ink: 244 245 247;
+    --color-ink-soft: 185 192 204;
+    --color-border: 230 232 236; /* light borders on dark = neobrutalism */
+    --color-shadow: 0 0 0;
   }
 
   html {
@@ -23,7 +69,7 @@
 
   /* A single, consistent, highly visible focus ring across the app. */
   :focus-visible {
-    outline: 3px solid #3F434A;
+    outline: 3px solid rgb(var(--color-secondary));
     outline-offset: 2px;
     border-radius: 4px;
   }

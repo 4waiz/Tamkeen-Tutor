@@ -3,11 +3,16 @@ import { scoreStatus } from "@/lib/utils";
 import { Progress } from "@/components/ui";
 import type { SkillScore } from "@/lib/types";
 
+// CSS-variable backed so charts adapt to light/dark themes.
 const STATUS_COLOR: Record<"success" | "warning" | "danger", string> = {
-  success: "#16A34A",
-  warning: "#D97706",
-  danger: "#DC2626",
+  success: "rgb(var(--color-success))",
+  warning: "rgb(var(--color-warning))",
+  danger: "rgb(var(--color-danger))",
 };
+const C_TRACK = "rgb(var(--color-surface-sunken))";
+const C_BORDER = "rgb(var(--color-border))";
+const C_SECONDARY = "rgb(var(--color-secondary))";
+const C_PRIMARY = "rgb(var(--color-primary))";
 
 /** Big readiness donut - pure SVG, no external chart lib. */
 export function ScoreDonut({

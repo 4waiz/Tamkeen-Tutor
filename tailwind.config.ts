@@ -7,32 +7,44 @@ import type { Config } from "tailwindcss";
  */
 const config: Config = {
   content: ["./src/**/*.{ts,tsx}"],
+  darkMode: "class",
   theme: {
     // Spacing scale: 4 / 8 / 12 / 16 / 24 / 32 (extends defaults, does not replace)
     extend: {
+      // Colors resolve from CSS variables (RGB channels) so light/dark
+      // themes swap automatically. See globals.css :root and .dark.
       colors: {
         primary: {
-          DEFAULT: "#F36F21", // EDGE signature orange - primary action surface
-          fg: "#1B1A17", // text on primary
+          DEFAULT: "rgb(var(--color-primary) / <alpha-value>)",
+          fg: "rgb(var(--color-primary-fg) / <alpha-value>)",
         },
         secondary: {
-          DEFAULT: "#3F434A", // EDGE charcoal grey accent
-          fg: "#FBFBF9",
+          DEFAULT: "rgb(var(--color-secondary) / <alpha-value>)",
+          fg: "rgb(var(--color-secondary-fg) / <alpha-value>)",
         },
-        success: { DEFAULT: "#16A34A", fg: "#FBFBF9" },
-        warning: { DEFAULT: "#D97706", fg: "#FBFBF9" },
-        danger: { DEFAULT: "#DC2626", fg: "#FBFBF9" },
+        success: {
+          DEFAULT: "rgb(var(--color-success) / <alpha-value>)",
+          fg: "rgb(var(--color-success-fg) / <alpha-value>)",
+        },
+        warning: {
+          DEFAULT: "rgb(var(--color-warning) / <alpha-value>)",
+          fg: "rgb(var(--color-warning-fg) / <alpha-value>)",
+        },
+        danger: {
+          DEFAULT: "rgb(var(--color-danger) / <alpha-value>)",
+          fg: "rgb(var(--color-danger-fg) / <alpha-value>)",
+        },
         surface: {
-          DEFAULT: "#FBFBF9", // warm off-white background
-          raised: "#FFFFFF",
-          sunken: "#F2F1EC",
+          DEFAULT: "rgb(var(--color-surface) / <alpha-value>)",
+          raised: "rgb(var(--color-surface-raised) / <alpha-value>)",
+          sunken: "rgb(var(--color-surface-sunken) / <alpha-value>)",
         },
         ink: {
-          DEFAULT: "#1C293C", // primary text
-          soft: "#3A4A63", // still AA on surface - never lighter than this for body text
+          DEFAULT: "rgb(var(--color-ink) / <alpha-value>)",
+          soft: "rgb(var(--color-ink-soft) / <alpha-value>)",
         },
         border: {
-          DEFAULT: "#1C293C", // thick dark borders
+          DEFAULT: "rgb(var(--color-border) / <alpha-value>)",
         },
       },
       fontFamily: {
@@ -58,12 +70,13 @@ const config: Config = {
         "neo-sm": "8px",
       },
       boxShadow: {
-        // Offset hard shadows - the neobrutalism signature
-        neo: "4px 4px 0 0 #1C293C",
-        "neo-lg": "6px 6px 0 0 #1C293C",
-        "neo-sm": "2px 2px 0 0 #1C293C",
-        "neo-secondary": "4px 4px 0 0 #3F434A",
-        "neo-inset": "inset 2px 2px 0 0 #1C293C",
+        // Offset hard shadows - the neobrutalism signature. The shadow color
+        // is a CSS variable so it flips for dark mode.
+        neo: "4px 4px 0 0 rgb(var(--color-shadow))",
+        "neo-lg": "6px 6px 0 0 rgb(var(--color-shadow))",
+        "neo-sm": "2px 2px 0 0 rgb(var(--color-shadow))",
+        "neo-secondary": "4px 4px 0 0 rgb(var(--color-secondary))",
+        "neo-inset": "inset 2px 2px 0 0 rgb(var(--color-shadow))",
       },
       spacing: {
         "1": "4px",
