@@ -139,6 +139,34 @@ export async function getLatestLearningPath(
   };
 }
 
+/** Latest practice submission per lesson_id for the user. */
+export async function getLatestSubmissions(
+  userId: string,
+): Promise<Map<string, { submission: string; feedback: string | null; score: number | null }>> {
+  const supabase = createClient();
+  const { data } = await supabase
+    .from("lesson_submissions")
+    .select("lesson_id, submission, feedback, score, created_at")
+    .eq("user_id", userId)
+    .order("created_at", { ascending: false });
+
+  const map = new Map<
+    string,
+    { submission: string; feedback: string | null; score: number | null }
+  >();
+  for (const row of data ?? []) {
+    // First seen per lesson is the most recent (descending order).
+    if (!map.has(row.lesson_id)) {
+      map.set(row.lesson_id, {
+        submission: row.submission,
+        feedback: row.feedback,
+        score: row.score,
+      });
+    }
+  }
+  return map;
+}
+
 /** Set of completed lesson_ids for the user. */
 export async function getCompletedLessonIds(
   userId: string,
