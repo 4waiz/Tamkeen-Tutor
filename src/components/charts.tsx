@@ -43,7 +43,7 @@ export function ScoreDonut({
           cy={size / 2}
           r={r}
           fill="none"
-          stroke="#F2F1EC"
+          stroke={C_TRACK}
           strokeWidth={stroke}
         />
         <circle
@@ -64,7 +64,7 @@ export function ScoreDonut({
           cy={size / 2}
           r={r + stroke / 2}
           fill="none"
-          stroke="#1C293C"
+          stroke={C_BORDER}
           strokeWidth={3}
         />
         <circle
@@ -72,7 +72,7 @@ export function ScoreDonut({
           cy={size / 2}
           r={r - stroke / 2}
           fill="none"
-          stroke="#1C293C"
+          stroke={C_BORDER}
           strokeWidth={3}
         />
         <text
