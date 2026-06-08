@@ -12,11 +12,11 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#FDC800", // vivid yellow — primary action surface
-          fg: "#1C293C", // text on primary
+          DEFAULT: "#16D67A", // EDGE signature green — primary action surface
+          fg: "#0A1F2C", // text on primary
         },
         secondary: {
-          DEFAULT: "#432DD7", // purple accent
+          DEFAULT: "#0B2E4F", // EDGE deep navy accent
           fg: "#FBFBF9",
         },
         success: { DEFAULT: "#16A34A", fg: "#FBFBF9" },
@@ -62,7 +62,7 @@ const config: Config = {
         neo: "4px 4px 0 0 #1C293C",
         "neo-lg": "6px 6px 0 0 #1C293C",
         "neo-sm": "2px 2px 0 0 #1C293C",
-        "neo-secondary": "4px 4px 0 0 #432DD7",
+        "neo-secondary": "4px 4px 0 0 #0B2E4F",
         "neo-inset": "inset 2px 2px 0 0 #1C293C",
       },
       spacing: {

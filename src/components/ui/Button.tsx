@@ -14,8 +14,8 @@ export interface ButtonProps
 }
 
 const VARIANTS: Record<Variant, string> = {
-  primary: "bg-primary text-primary-fg hover:bg-[#ffd633]",
-  secondary: "bg-secondary text-secondary-fg hover:bg-[#5942e0]",
+  primary: "bg-primary text-primary-fg hover:bg-[#34E08C]",
+  secondary: "bg-secondary text-secondary-fg hover:bg-[#14436E]",
   ghost: "bg-surface-raised text-ink hover:bg-surface-sunken",
   danger: "bg-danger text-danger-fg hover:bg-[#e23b3b]",
 };

@@ -164,14 +164,14 @@ export function ProgressChart({
           </g>
         );
       })}
-      <path d={path} fill="none" stroke="#432DD7" strokeWidth={4} strokeLinejoin="round" />
+      <path d={path} fill="none" stroke="#0B2E4F" strokeWidth={4} strokeLinejoin="round" />
       {xs.map((x, i) => (
         <circle
           key={i}
           cx={x}
           cy={ys[i]}
           r={5}
-          fill="#FDC800"
+          fill="#16D67A"
           stroke="#1C293C"
           strokeWidth={3}
         />
