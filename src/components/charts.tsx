@@ -162,22 +162,22 @@ export function ProgressChart({
         const y = h - pad - (g / 100) * (h - pad * 2);
         return (
           <g key={g}>
-            <line x1={pad} y1={y} x2={w - pad} y2={y} stroke="#F2F1EC" strokeWidth={2} />
+            <line x1={pad} y1={y} x2={w - pad} y2={y} stroke={C_TRACK} strokeWidth={2} />
             <text x={4} y={y + 4} fontSize={10} className="fill-ink-soft font-mono">
               {g}
             </text>
           </g>
         );
       })}
-      <path d={path} fill="none" stroke="#3F434A" strokeWidth={4} strokeLinejoin="round" />
+      <path d={path} fill="none" stroke={C_SECONDARY} strokeWidth={4} strokeLinejoin="round" />
       {xs.map((x, i) => (
         <circle
           key={i}
           cx={x}
           cy={ys[i]}
           r={5}
-          fill="#F36F21"
-          stroke="#1C293C"
+          fill={C_PRIMARY}
+          stroke={C_BORDER}
           strokeWidth={3}
         />
       ))}

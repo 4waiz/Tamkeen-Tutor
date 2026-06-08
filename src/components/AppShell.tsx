@@ -53,7 +53,7 @@ export function AppShell({
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "rounded-neo-sm border-3 px-3 py-1.5 text-sm font-semibold transition-colors",
+                        "whitespace-nowrap rounded-neo-sm border-3 px-3 py-1.5 text-sm font-semibold transition-colors",
                         active
                           ? "border-border bg-primary text-primary-fg shadow-neo-sm"
                           : "border-transparent text-ink hover:border-border hover:bg-surface-sunken",
@@ -69,14 +69,14 @@ export function AppShell({
 
           <div className="flex items-center gap-2">
             {userName && (
-              <span className="hidden items-center rounded-full border-3 border-border bg-surface-sunken px-3 py-1 text-sm font-semibold text-ink sm:inline-flex">
+              <span className="hidden items-center whitespace-nowrap rounded-full border-3 border-border bg-surface-sunken px-3 py-1 text-sm font-semibold text-ink sm:inline-flex">
                 {userName}
               </span>
             )}
             <form action={signOut}>
               <button
                 type="submit"
-                className="rounded-neo-sm border-3 border-border bg-surface-raised px-3 py-1.5 text-sm font-semibold shadow-neo-sm transition-transform hover:-translate-y-0.5 active:translate-y-0"
+                className="whitespace-nowrap rounded-neo-sm border-3 border-border bg-surface-raised px-3 py-1.5 text-sm font-semibold shadow-neo-sm transition-transform hover:-translate-y-0.5 active:translate-y-0"
               >
                 Sign out
               </button>

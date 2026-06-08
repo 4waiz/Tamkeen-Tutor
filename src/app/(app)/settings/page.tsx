@@ -3,6 +3,7 @@ import { getProfile } from "@/lib/data";
 import { createClient } from "@/lib/supabase/server";
 import { aiEnabled } from "@/lib/ai/provider";
 import { signOut } from "@/app/auth/actions";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { SettingsForm } from "./SettingsForm";
 
 export const dynamic = "force-dynamic";
@@ -43,6 +44,15 @@ export default async function SettingsPage() {
             </form>
           </div>
         </div>
+      </Card>
+
+      <Card className="mt-4">
+        <CardHeader
+          tag="Appearance"
+          title="Theme"
+          description="Switch between light and dark mode. Your choice is saved on this device."
+        />
+        <ThemeToggle />
       </Card>
 
       <Card className="mt-4">
