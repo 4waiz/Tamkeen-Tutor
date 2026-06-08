@@ -68,11 +68,14 @@ export async function POST(req: Request) {
 
   if (aiEnabled()) {
     // Replay recent history for this lesson so the tutor has continuity.
-    const { data: history } = await supabase
+    const historyBase = supabase
       .from("tutor_messages")
       .select("role, content")
-      .eq("user_id", user.id)
-      .eq("lesson_id", lesson_id ?? null)
+      .eq("user_id", user.id);
+    const { data: history } = await (lesson_id
+      ? historyBase.eq("lesson_id", lesson_id)
+      : historyBase.is("lesson_id", null)
+    )
       .order("created_at", { ascending: false })
       .limit(8);
 

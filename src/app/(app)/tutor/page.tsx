@@ -31,11 +31,14 @@ export default async function TutorPage({
 
   // Load prior conversation for this lesson (or general thread).
   const supabase = createClient();
-  const { data: history } = await supabase
+  const baseQuery = supabase
     .from("tutor_messages")
     .select("role, content, created_at")
-    .eq("user_id", profile.id)
-    .eq("lesson_id", lessonId ?? null)
+    .eq("user_id", profile.id);
+  const { data: history } = await (lessonId
+    ? baseQuery.eq("lesson_id", lessonId)
+    : baseQuery.is("lesson_id", null)
+  )
     .order("created_at", { ascending: true })
     .limit(50);
 

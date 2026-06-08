@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 type Accent = "none" | "primary" | "secondary";
 
-export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface CardProps extends React.HTMLAttributes<HTMLElement> {
   accent?: Accent;
   as?: "div" | "section" | "article" | "li";
 }
